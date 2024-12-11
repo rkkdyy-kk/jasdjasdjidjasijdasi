@@ -17,7 +17,11 @@
                 const listElement = document.getElementById('data-list');
                 data.forEach(item => {
                     const li = document.createElement('li');
-                    li.textContent = `${item.desc}: ${item.url}`;
+                    const link = document.createElement('a');
+                    link.href = item.url;
+                    link.textContent = item.desc;
+                    link.target = '_blank';
+                    li.appendChild(link);
                     listElement.appendChild(li);
                 });
             })
