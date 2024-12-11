@@ -11,6 +11,9 @@
     <h1>E7</h1>
     <ul id="data-list"></ul>
     <script>
+        const header = document.getElementById('header');
+        header.setAttribute('style',
+            'font-family: Arial, sans-serif; text-align: center; color: darkblue; fontSize: 32px');
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
