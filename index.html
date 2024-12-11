@@ -11,9 +11,6 @@
     <h1>E7</h1>
     <ul id="data-list"></ul>
     <script>
-        const header = document.getElementById('header');
-        header.setAttribute('style',
-            'font-family: Arial, sans-serif; text-align: center; color: darkblue; fontSize: 32px');
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
@@ -24,6 +21,9 @@
                     link.href = item.url;
                     link.textContent = item.desc;
                     link.target = '_blank';
+                    li.setAttribute('style',
+                        'font-family: Arial, sans-serif; color: darkgreen; margin: 5px 0; font-size: 18px;'
+                    );
                     li.appendChild(link);
                     listElement.appendChild(li);
                 });
