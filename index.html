@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E7Hyperlinks</title>
+</head>
+
+<body>
+    <h1>E7</h1>
+    <ul id="data-list"></ul>
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const listElement = document.getElementById('data-list');
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.desc}: ${item.url}`;
+                    listElement.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error fetching the JSON file:', error));
+    </script>
+</body>
+
+</html>
